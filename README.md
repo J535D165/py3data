@@ -1,6 +1,6 @@
 # py3data
 
-[![PyPI](https://img.shields.io/pypi/v/py3data)](https://pypi.org/project/py3data/) [![DOI](https://zenodo.org/badge/557541347.svg)](https://zenodo.org/badge/latestdoi/557541347)
+[![PyPI](https://img.shields.io/pypi/v/py3data)](https://pypi.org/project/py3data/) [![DOI](https://zenodo.org/badge/670666682.svg)](https://zenodo.org/badge/latestdoi/670666682)
 
 py3data is a Python library for [re3data](https://re3data.org/) registry.
 Re3data is a global registry of research data repositories that covers
