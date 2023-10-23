@@ -229,7 +229,7 @@ def parse(
     namespace_separator=":",
     disable_entities=True,
     process_comments=False,
-    **kwargs
+    **kwargs,
 ):
     """Parse the given XML input and convert it into a dictionary.
 

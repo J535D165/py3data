@@ -83,11 +83,9 @@ config = Config(email=None, api_url="https://www.re3data.org/api/beta/")
 
 
 def _fix_schema(d):
-
     new_d = {}
 
     for k, v in d.items():
-
         # rename items
         if k in MAPPING:
             k = MAPPING[k]
@@ -147,12 +145,9 @@ def _fix_schema(d):
         new_d["metadataStandards"] = md_standard
 
     if "institutions" in new_d:
-
         res_institutions = []
         for institution in new_d["institutions"]:
-
             if "institutionAdditionalName" in institution:
-
                 if isinstance(institution["institutionAdditionalName"], dict):
                     institution["institutionAdditionalName"] = institution[
                         "institutionAdditionalName"
@@ -187,7 +182,6 @@ def _fix_schema(d):
 
 
 def _params_merge(params, add_params):
-
     for k, _v in add_params.items():
         if (
             k in params
@@ -225,15 +219,12 @@ class Repositories:
     resource_class = Repository
 
     def __init__(self, params=None):
-
         self.params = params
 
     def __getattr__(self, key):
-
         return getattr(self, key)
 
     def __getitem__(self, record_id):
-
         if isinstance(record_id, list):
             return self._get_multi_items(record_id)
 
@@ -257,13 +248,11 @@ class Repositories:
 
     @property
     def url(self):
-
         if not self.params:
             return config.api_url + "repositories"
 
         l_params = []
         for k, v in self.params.items():
-
             if v is None:
                 pass
             elif isinstance(v, list):
@@ -283,7 +272,6 @@ class Repositories:
         return len(m)
 
     def get(self):
-
         res = requests.get(
             self.url,
             headers={"User-Agent": "py3data/" + __version__, "From": config.email},
@@ -303,7 +291,6 @@ class Repositories:
         return results
 
     def _add_params(self, argument, new_params):
-
         if self.params is None:
             self.params = {argument: new_params}
         elif argument in self.params and isinstance(self.params[argument], dict):
@@ -314,13 +301,11 @@ class Repositories:
         logging.debug("Params updated:", self.params)
 
     def filter(self, **kwargs):
-
         for k, v in kwargs.items():
             self._add_params(f"{k}[]", v)
 
         return self
 
     def query(self, q):
-
         self._add_params("query", q)
         return self
