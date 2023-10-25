@@ -157,6 +157,19 @@ A list of examples for the re3data.org dataset.
 )
 ```
 
+### Data dump
+
+The following code dumps all data of re3data.org into a list of dicts. The
+following code can take a while to run because of the structure of the
+re3data API.
+
+```python
+from py3data import Repositories
+
+all_data = [Repositories()[x["id"]] for x in Repositories().get()]
+
+```
+
 ## License
 
 [MIT](/LICENSE)
