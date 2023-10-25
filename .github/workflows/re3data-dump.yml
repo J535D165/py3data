@@ -1,5 +1,7 @@
 name: Run a full re3data dump
-on: [push, pull_request]
+on:
+  schedule:
+    - cron:  '27 5 13 * *'
 
 jobs:
   data-dump:
