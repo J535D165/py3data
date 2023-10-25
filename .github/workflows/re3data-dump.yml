@@ -3,6 +3,9 @@ on: [push, pull_request]
 
 jobs:
   data-dump:
+
+    runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
