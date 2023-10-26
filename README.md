@@ -176,7 +176,7 @@ all_data = [Repositories()[x["id"]] for x in Repositories().get()]
 
 ## Contact
 
-> This library is a community contribution. The authors of this Python library aren't affliated to re3data.
+> This library is a community contribution. The authors of this Python library aren't affiliated with re3data.
 
 Feel free to reach out with questions, remarks, and suggestions. The
 [issue tracker](/issues) is a good starting point. You can also email me at
