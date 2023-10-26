@@ -17,7 +17,7 @@ classifiers = [
 license = {text = "MIT"}
 dependencies = ["requests"]
 dynamic = ["version"]
-requires-python = ">=3.6"
+requires-python = ">=3.8"
 
 [project.optional-dependencies]
 lint = ["ruff"]
